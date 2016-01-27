@@ -54,6 +54,7 @@ int checkCar(CAR *car){
 	}
 }
 
+/* struct X has declared in car.h, now we define the X in car.c*/
 struct X{
 	int xmember1;
 	int xmember2;
