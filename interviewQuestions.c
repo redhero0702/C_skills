@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX(A,B) ((A>B)?A:B)
+#define PRINT_COPYRIGHT(AUTHOR) printf("Copyright #AUTHOR");
+#define ERR(...) fprintf(stderr, __VA_ARGS__)
+
 void foo(void)
 {
 	unsigned int a = 6;
@@ -100,7 +104,7 @@ void fun1(void) {
 	printf("hello fun1\n");
 }
 
-int main(void){
+int main(int argc, char *argv[]){
 	/*how to dynamically allocate memory space with malloc*/
 	int *ptr = (int *) malloc(sizeof(int));
 
@@ -201,13 +205,30 @@ int main(void){
 	free(fullname);
 	*/
 
-	/* how to use fgets to read input string */
-	char *name[100];
+	/* how to use fgets to read input string 
+	char *name = (char *) malloc(100);
 	fgets(name, 100, stdin);
 	fputs(name,stdout);
+	*/
+
+	ERR("This is my error code :%d\n", -20);
+	unsigned int zero = 0;
+	unsigned int compzero = ~0; //1's complement of zero
+
+	/*how to define a char array
+	char array[];
+	char array[5] = {'1', '2', '3', '4', '5'};
+	char array[5] = {'12345'};
+	char array[2][10]={“China","Beijing"};
+	*/
+
+	float floatvalue = 10.123;
+	int roundedvalue = (int) floatvalue; 
+
 
 	return 0;
 }
+
 
 
 
