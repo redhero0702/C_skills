@@ -1,3 +1,5 @@
+#include "engine.h"
+
 enum status{
 	STOPPED,
 	READY,
@@ -18,7 +20,6 @@ struct Thing {
 	int i;
 	struct X* x_ptr;
 };
-
 
 int initCar(CAR *car, const char *brand, const int power, const enum status carstatus);
 int showCar(CAR car);
